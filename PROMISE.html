@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCript>
+        const studentPromise=
+        new Pomise(funtion(resolve,reject){
+
+            console.log("inside function");
+            let success =false
+            setTimeout(funtion(){
+                console.log("inside setimeout")
+
+                if(success){
+                    console.log("inside success")
+                    resolve("student is resolved")
+
+                }else{
+                    
+                    console.log("inside error")
+                    reject("student is in error")
+                    
+                }
+                
+   
+            },3000)
+            
+        })
+
+        studentPromise
+        .then(function(result){
+            console.log("inside then")
+            console.log(result)
+        })
+        .catch (function(error);{
+        
+            console.log("inside then")
+            console.log(error)
+        })
+    </SCript>
+    
+</body>
+</html>
