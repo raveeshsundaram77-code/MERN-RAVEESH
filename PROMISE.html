@@ -6,42 +6,54 @@
     <title>Document</title>
 </head>
 <body>
-    <SCript>
-        const studentPromise=
-        new Pomise(funtion(resolve,reject){
+    <!DOCTYPE html>
+<html>
 
-            console.log("inside function");
-            let success =false
-            setTimeout(funtion(){
-                console.log("inside setimeout")
+<body>
+    <script>
+        //CAMEL CASE
+        const studentPromise =
+            //resolve or reject
+            new Promise(function(resolve, reject) {
 
-                if(success){
-                    console.log("inside success")
-                    resolve("student is resolved")
+                console.log("Promise is pending...");
 
-                }else{
-                    
-                    console.log("inside error")
-                    reject("student is in error")
-                    
-                }
-                
-   
-            },3000)
-            
-        })
+                let success = false;
 
+                setTimeout(function() {
+                    console.log("inside setTimeout...");
+
+                    if (success) {
+                        // If the promise is successful, resolve it
+                        console.log("Promise is resolved...");
+                        resolve("Promise resolved successfully!");
+                    }
+
+                    else {
+                        // If the promise fails, reject it
+                        console.log("Promise is rejected...");
+                        reject("Promise rejected.");
+                    }
+                }, 3000); // Simulate an asynchronous operation with a timeout
+
+            })
+            // Handle the resolved or rejected promise using then and catch
+            //for printing the result of the promise
         studentPromise
-        .then(function(result){
-            console.log("inside then")
-            console.log(result)
-        })
-        .catch (function(error);{
-        
-            console.log("inside then")
-            console.log(error)
-        })
-    </SCript>
-    
+            .then(function(result) {
+                console.log("inside then");
+                console.log(result);
+
+            })
+            .catch(function(error) {
+                console.log("inside catch");
+                console.log(error);
+
+            });
+
+    </script>
+</body>
+
+</html>
 </body>
 </html>
